@@ -5,6 +5,7 @@
       <h1 class="title">
         nuxt-blog
       </h1>
+      <p>this is testing of git</p>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
