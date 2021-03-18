@@ -26,8 +26,6 @@ export default {
   methods:{
     toggleSidenav(){
       this.displaySidenav = !this.displaySidenav
-      console.log(this.displaySidenav)
-
     },
     closeSidenav(){
       this.displaySidenav = false
