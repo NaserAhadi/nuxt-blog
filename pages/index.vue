@@ -3,34 +3,15 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <section class="featured-posts">
-      <PostPreview 
-        id="1"
-        title="Post One"
-        previewText="This is First post"
-        thumbnail="tech1.png"
-      />
-      <PostPreview 
-        id="2"
-        title="Post Two"
-        previewText="This is Seconde post"
-        thumbnail="tech2.png"
-      />
-      <PostPreview 
-        id="3"
-        title="Post Three"
-        previewText="This is Third post"
-        thumbnail="tech3.png"
-      />
-    </section>
+    <PostList /> 
   </div>
 </template>
 
 <script>
-import PostPreview from "@/components/Posts/PostPreview"
+import PostList from "@/components/Posts/PostList"
 export default {
   components:{
-    PostPreview
+    PostList
   }
 }
 </script>
@@ -70,7 +51,6 @@ export default {
   justify-content: center;
   flex-direction: column !important;
 }
-
 
 a {
   text-decoration: none;
