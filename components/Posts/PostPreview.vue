@@ -1,5 +1,5 @@
 <template>
-    <nuxt-link :to="'/posts/' + id"> 
+    <nuxt-link :to="postLink"> 
         <article class="post-preview">
           <div 
             class="post-thumbnail" 
@@ -32,12 +32,16 @@ export default {
         thumbnail:{
             type:String,
             required:true
+        },
+        isAdmin:{
+          type:Boolean,
+          required:true
         }
     },
-    data(){
-        return{
-            test:'@/assets/image/tech1.png'
-        }
+    computed:{
+      postLink(){
+        return this.isAdmin ? '/admin/' + this.id : '/posts/' + this.id
+      }
     }
 }
 </script>
@@ -49,6 +53,7 @@ export default {
   width: 90%;
   min-width: 22rem;
   margin: 1rem 0; 
+  border-radius: 0.5rem;
 }
 
 .post-thumbnail {
@@ -56,6 +61,7 @@ export default {
   height: 200px;
   background-position: center;
   background-size: cover;
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .post-content {
