@@ -7,7 +7,10 @@
         </section>
         <section class="existing-posts">
             <h1>Existing Posts</h1>
-            <PostList isAdmin/>
+            <PostList 
+                isAdmin
+                :posts="loadedPost"
+            />
         </section>
     </div>
 </template>
@@ -20,6 +23,30 @@ export default {
     components:{
         PostList,
         AppButton
+    },
+    data(){
+        return {
+              loadedPost:[
+                {
+                id:"1",
+                title:"First Post",
+                previewText:"This is First post",
+                thumbnail:"tech1.png"
+                },
+                {
+                id:"2",
+                title:"Seconde Post",
+                previewText:"This is seconde post",
+                thumbnail:"tech2.png"
+                },
+                {
+                id:"3",
+                title:"Third Post",
+                previewText:"This is third post",
+                thumbnail:"tech3.png"
+                }
+            ]
+        }
     },
     methods:{
         createNewPost(){
