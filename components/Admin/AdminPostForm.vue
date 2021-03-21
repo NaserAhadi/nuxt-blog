@@ -61,9 +61,6 @@ export default {
                 }
         }
     },
-    mounted(){
-        console.log(this.editedPost)
-    },
     methods:{
         onSave(){
             // Save the post
