@@ -9,7 +9,12 @@
             <p class="post-content">Content of the post</p>
         </section>
         <section class="post-feedback">
-            <p>Let me know what you think about the post, send a mail to <a href="mailto:feedback@my-awesome-domain.com">feedback@my-awesome-domain.com</a>.</p>
+            <p>
+              Let me know what you think about the post, send a mail to 
+              <a href="mailto:feedback@my-awesome-domain.com">
+                feedback@my-awesome-domain.com
+              </a>.
+            </p>
         </section>
     </div>
 </template>
