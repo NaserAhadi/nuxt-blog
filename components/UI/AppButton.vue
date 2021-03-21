@@ -28,6 +28,7 @@ export default{
     cursor: pointer;
     border: 1px solid #000;
     border-radius: 0.5rem;
+    outline: none;
 }
 .button:hover,
 .button:active{
