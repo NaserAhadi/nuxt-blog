@@ -13,9 +13,11 @@ export default {
   components:{
     PostList
   },
-  data(){
-    return {
-      loadedPost:[
+  asyncData(context, callback){
+    // console.log("context", context)
+    setTimeout(()=>{
+      callback(null, {
+        loadedPost:[
         {
           id:"1",
           title:"First Post",
@@ -35,8 +37,15 @@ export default {
           thumbnail:"tech3.png"
         }
       ]
-    }
-  }
+      })
+    },1500)
+  },
+  // data(){
+  //   return {
+  //     loadedPost:[]
+  //   }
+  // },
+  created(){}
 }
 </script>
 
