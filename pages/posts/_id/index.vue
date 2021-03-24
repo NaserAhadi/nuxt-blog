@@ -20,10 +20,9 @@
 </template>
 <script>
 export default {
-  asyncData(context){
-    return new Promise((resolve, reject)=> {
-      setTimeout(() => {
-        resolve({
+  asyncData(context, callback){  
+    setTimeout(() => {
+        callback(null, {
            loadedPost:{
             id:context.route.params.id,
             title:"First Post (ID: "+ context.route.params.id +")",
@@ -34,17 +33,7 @@ export default {
             thumbnail:"tech1.png"
           }
         })
-        reject(new Error())
-    },1000)
-    })
-    .then(data => {
-      console.log("data", data)
-      return data
-    })
-    .catch(e => {
-        console.log(e)
-        context.error(e)
-      })    
+      }, 1000)
   }
 }
 </script>
