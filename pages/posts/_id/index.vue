@@ -26,7 +26,7 @@ export default {
       callback(null, {
          loadedPost:{
           id:"1",
-          title:"First Post ID:( "+ context.route.params.id +" )",
+          title:"First Post (ID: "+ context.route.params.id +")",
           author:"Naser",
           content:"This is dummy text",
           updatedDate:new Date(),
