@@ -13,39 +13,11 @@ export default {
   components:{
     PostList
   },
-  asyncData(context, callback){
-    // console.log("context", context)
-    setTimeout(()=>{
-      callback(null, {
-        loadedPost:[
-        {
-          id:"1",
-          title:"First Post",
-          previewText:"This is First post",
-          thumbnail:"tech1.png"
-        },
-        {
-          id:"2",
-          title:"Seconde Post",
-          previewText:"This is seconde post",
-          thumbnail:"tech2.png"
-        },
-        {
-          id:"3",
-          title:"Third Post",
-          previewText:"This is third post",
-          thumbnail:"tech3.png"
-        }
-      ]
-      })
-    },1500)
-  },
-  // data(){
-  //   return {
-  //     loadedPost:[]
-  //   }
-  // },
-  created(){}
+  computed:{
+    loadedPost(){
+      return this.$store.getters.loadedPosts
+    }
+  }
 }
 </script>
 
