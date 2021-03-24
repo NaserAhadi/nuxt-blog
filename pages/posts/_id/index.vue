@@ -20,21 +20,31 @@
 </template>
 <script>
 export default {
-  asyncData(context, callback){
-    // console.log(context)
-    setTimeout(() => {
-      callback(null, {
-         loadedPost:{
-          id:"1",
-          title:"First Post (ID: "+ context.route.params.id +")",
-          author:"Naser",
-          content:"This is dummy text",
-          updatedDate:new Date(),
-          previewText:"This is First post",
-          thumbnail:"tech1.png"
-        }
-      })
+  asyncData(context){
+    return new Promise((resolve, reject)=> {
+      setTimeout(() => {
+        resolve({
+           loadedPost:{
+            id:context.route.params.id,
+            title:"First Post (ID: "+ context.route.params.id +")",
+            author:"Naser",
+            content:"This is dummy text",
+            updatedDate:new Date(),
+            previewText:"This is First post",
+            thumbnail:"tech1.png"
+          }
+        })
+        reject(new Error())
     },1000)
+    })
+    .then(data => {
+      console.log("data", data)
+      return data
+    })
+    .catch(e => {
+        console.log(e)
+        context.error(e)
+      })    
   }
 }
 </script>
