@@ -1,5 +1,5 @@
 import Vuex from "vuex";
-
+import axios from "axios";
 
 const createStore = () => {
     return new Vuex.Store({
@@ -7,35 +7,23 @@ const createStore = () => {
             loadedPosts:[]
         },
         mutations:{
-            SET_POSTS:(state, payload) => state.loadedPosts = payload
+            SET_POSTS:(state, payload) => {
+                state.loadedPosts = payload
+                console.log("payload", payload)
+            }
         },
         actions:{
             nuxtServerInit(vuexContext, context){
-                return new Promise((resolve, reject) => {
-                    setTimeout(() => {
-                        vuexContext.commit("SET_POSTS", [
-                            {
-                              id:"1",
-                              title:"First Post",
-                              previewText:"This is First post",
-                              thumbnail:"tech1.png"
-                            },
-                            {
-                              id:"2",
-                              title:"Seconde Post",
-                              previewText:"This is seconde post",
-                              thumbnail:"tech2.png"
-                            },
-                            {
-                              id:"3",
-                              title:"Third Post",
-                              previewText:"This is third post",
-                              thumbnail:"tech3.png"
-                            }
-                          ])
-                        resolve();
-                    })
-                })
+                return axios.get("https://nuxt-blog-426f8-default-rtdb.firebaseio.com/posts.json")
+                            .then(res => {
+                                const postsArray = []
+                                for(const key in res.data){
+                                    postsArray.push({...res.data[key], id:key})
+                                }
+                                console.log(123)
+                                vuexContext.commit("SET_POSTS", postsArray)
+                            })
+                            .catch(e => context.error(e))
             },
             setPosts(vuexContext, posts){
                 vuexContext.commit("SET_POSTS", posts)
