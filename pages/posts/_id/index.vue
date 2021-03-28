@@ -19,21 +19,17 @@
     </div>
 </template>
 <script>
+import axios from "axios";
+
 export default {
-  asyncData(context, callback){  
-    setTimeout(() => {
-        callback(null, {
-           loadedPost:{
-            id:context.route.params.id,
-            title:"First Post (ID: "+ context.route.params.id +")",
-            author:"Naser",
-            content:"This is dummy text",
-            updatedDate:new Date(),
-            previewText:"This is First post",
-            thumbnail:"tech1.png"
-          }
-        })
-      }, 1000)
+  asyncData(context){  
+    return axios.get("https://nuxt-blog-426f8-default-rtdb.firebaseio.com/posts/" + context.params.id + ".json")
+      .then(res => {
+        return {
+          loadedPost:res.data
+        }
+      })
+      .catch(e => context.error(e))
   }
 }
 </script>
