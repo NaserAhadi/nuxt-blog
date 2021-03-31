@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "author": "Naser",
+      "title": "First Post",
+      "content": "this is first post content",
+      "thumbnail": "tech1.png",
+      "previewText": "preview of first post",
+      "updatedDate": "2021-03-31T12:41:17.518Z",
+      "id": "3978482760"
+    },
+    {
+      "author": "Max",
+      "title": "Second Post",
+      "content": "content of second post",
+      "thumbnail": "tech2.png",
+      "previewText": "preview of second post",
+      "updatedDate": "2021-03-31T12:42:26.055Z",
+      "id": "8577810071"
+    },
+    {
+      "author": "Brad",
+      "title": "Third Post",
+      "content": "content of third post",
+      "thumbnail": "tech3.png",
+      "previewText": "preview of third post",
+      "updatedDate": "2021-03-31T12:43:14.869Z",
+      "id": "5612523788"
+    }
+  ]
+}

@@ -16,12 +16,12 @@ export default {
     },
     methods:{
         onSubmitted(postData){
-            axios.post("https://nuxt-blog-426f8-default-rtdb.firebaseio.com/posts.json", {
+            axios.post("http://localhost:3000/posts", {   
                     ...postData, 
-                    updatedDate:new Date()
+                    updatedDate:new Date(),
+                    id:Math.random().toString().slice(2,12)
                 })
                 .then((res) => {
-                    console.log(res)
                     this.$router.push("/admin")
                     })
                 .catch(e => console.log(e))

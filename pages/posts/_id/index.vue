@@ -23,7 +23,7 @@ import axios from "axios";
 
 export default {
   asyncData(context){  
-    return axios.get("https://nuxt-blog-426f8-default-rtdb.firebaseio.com/posts/" + context.params.id + ".json")
+    return axios.get("http://localhost:3000/posts/" + context.params.id)
       .then(res => {
         return {
           loadedPost:res.data

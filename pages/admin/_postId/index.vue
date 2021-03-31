@@ -18,12 +18,8 @@ export default {
     components:{
         AdminPostForm
     },
-    asyncData(){
-        return axios.get(
-                        "https://nuxt-blog-426f8-default-rtdb.firebaseio.com/posts/" + 
-                            context.params.id + 
-                            ".json"
-                )
+    asyncData(context){
+        return axios.get("http://localhost:3000/posts/" + context.params.postId)
                 .then(res => {
                     return {
                         loadedPost : res.data
@@ -33,9 +29,8 @@ export default {
     },
     methods:{
         onSubmitted(editedPost){
-            axios.put("https://nuxt-blog-426f8-default-rtdb.firebaseio.com/posts/" + 
-                this.$route.params.id + 
-                ".json", editedPost)
+            axios.put("http://localhost:3000/posts/" + 
+                this.$route.params.postId, editedPost)
                 .then(() => this.$router.push("/admin"))
                 .catch(e => console.log(e))
         }

@@ -9,18 +9,16 @@ const createStore = () => {
         mutations:{
             SET_POSTS:(state, payload) => {
                 state.loadedPosts = payload
-                console.log("payload", payload)
             }
         },
         actions:{
             nuxtServerInit(vuexContext, context){
-                return axios.get("https://nuxt-blog-426f8-default-rtdb.firebaseio.com/posts.json")
+                return axios.get("http://localhost:3000/posts")
                             .then(res => {
                                 const postsArray = []
                                 for(const key in res.data){
-                                    postsArray.push({...res.data[key], id:key})
+                                    postsArray.push({...res.data[key]})
                                 }
-                                console.log(123)
                                 vuexContext.commit("SET_POSTS", postsArray)
                             })
                             .catch(e => context.error(e))

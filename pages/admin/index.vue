@@ -18,35 +18,21 @@
 <script>
 import PostList from "@/components/Posts/PostList"
 import AppButton from "@/components/UI/AppButton"
+import axios from "axios";
 export default {
     layout:"admin",
     components:{
         PostList,
         AppButton
     },
-    data(){
-        return {
-              loadedPost:[
-                {
-                id:"1",
-                title:"First Post",
-                previewText:"This is First post",
-                thumbnail:"tech1.png"
-                },
-                {
-                id:"2",
-                title:"Seconde Post",
-                previewText:"This is seconde post",
-                thumbnail:"tech2.png"
-                },
-                {
-                id:"3",
-                title:"Third Post",
-                previewText:"This is third post",
-                thumbnail:"tech3.png"
-                }
-            ]
-        }
+    asyncData(context){
+        return axios.get("http://localhost:3000/posts")
+                .then(res => {
+                    return {
+                        loadedPost:res.data
+                    }
+                })
+                .catch(e => context.error(e))
     },
     methods:{
         createNewPost(){
