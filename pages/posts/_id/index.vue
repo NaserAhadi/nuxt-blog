@@ -23,13 +23,16 @@ import axios from "axios";
 
 export default {
   asyncData(context){  
-    return axios.get("http://localhost:3000/posts/" + context.params.id)
+    return axios.get(process.env.baseUrl + "/posts/" + context.params.id)
       .then(res => {
         return {
           loadedPost:res.data
         }
       })
       .catch(e => context.error(e))
+  },
+  head:{
+    title : "A Blog Post"
   }
 }
 </script>
