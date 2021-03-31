@@ -18,7 +18,7 @@ const createStore = () => {
         },
         actions:{
             nuxtServerInit(vuexContext, context){
-                return axios.get("http://localhost:3000/posts")
+                return axios.get(process.env.baseUrl + "/posts")
                             .then(res => {
                                 vuexContext.commit("SET_POSTS", res.data)
                             })
@@ -33,14 +33,14 @@ const createStore = () => {
                     updatedDate:new Date(),
                     id:Math.random().toString().slice(2,12)
                 }
-                return axios.post("http://localhost:3000/posts", createdPost)
+                return axios.post(process.env.baseUrl + "/posts", createdPost)
                     .then(res => {
                         vuexContext.commit("ADD_POST", res.data)
                     })
                     .catch(e => console.log(e))
             },
             editPost(vuexContext, editedPost){
-                return axios.put("http://localhost:3000/posts/" + editedPost.id, editedPost)
+                return axios.put(process.env.baseUrl + "/posts" + editedPost.id, editedPost)
                     .then(res => {
                         vuexContext.commit("EDIT_POST", res.data)
                     })

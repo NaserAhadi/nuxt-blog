@@ -26,7 +26,7 @@ export default {
         AppButton
     },
     asyncData(context){
-        return axios.get("http://localhost:3000/posts")
+        return axios.get(process.env.baseUrl + "/posts")
                 .then(res => {
                     return {
                         loadedPost:res.data

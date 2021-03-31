@@ -19,7 +19,7 @@ export default {
         AdminPostForm
     },
     asyncData(context){
-        return axios.get("http://localhost:3000/posts/" + context.params.postId)
+        return axios.get(process.env.baseUrl + "/posts/" + context.params.postId)
                 .then(res => {
                     return {
                         loadedPost : res.data
