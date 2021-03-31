@@ -15,11 +15,7 @@ const createStore = () => {
             nuxtServerInit(vuexContext, context){
                 return axios.get("http://localhost:3000/posts")
                             .then(res => {
-                                const postsArray = []
-                                for(const key in res.data){
-                                    postsArray.push({...res.data[key]})
-                                }
-                                vuexContext.commit("SET_POSTS", postsArray)
+                                vuexContext.commit("SET_POSTS", res.data)
                             })
                             .catch(e => context.error(e))
             },
