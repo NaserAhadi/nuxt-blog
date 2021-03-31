@@ -5,7 +5,7 @@
       "title": "First Post",
       "content": "this is first post content",
       "thumbnail": "tech1.png",
-      "previewText": "preview of first post",
+      "previewText": "preview of first post \ndoes it update work??\n???///",
       "updatedDate": "2021-03-31T12:41:17.518Z",
       "id": "3978482760"
     },
@@ -14,7 +14,7 @@
       "title": "Second Post",
       "content": "content of second post",
       "thumbnail": "tech2.png",
-      "previewText": "preview of second post",
+      "previewText": "preview of second post !!!!!!!",
       "updatedDate": "2021-03-31T12:42:26.055Z",
       "id": "8577810071"
     },
@@ -23,9 +23,18 @@
       "title": "Third Post",
       "content": "content of third post",
       "thumbnail": "tech3.png",
-      "previewText": "preview of third post",
+      "previewText": "preview of third post - updated",
       "updatedDate": "2021-03-31T12:43:14.869Z",
       "id": "5612523788"
+    },
+    {
+      "author": "Naser",
+      "title": "test of editing",
+      "content": "does it work?",
+      "thumbnail": "tech1.png",
+      "previewText": "should work now!!\n???",
+      "updatedDate": "2021-03-31T14:27:36.051Z",
+      "id": "7553613221"
     }
   ]
 }

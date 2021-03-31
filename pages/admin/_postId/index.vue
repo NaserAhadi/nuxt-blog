@@ -29,10 +29,8 @@ export default {
     },
     methods:{
         onSubmitted(editedPost){
-            axios.put("http://localhost:3000/posts/" + 
-                this.$route.params.postId, editedPost)
+            this.$store.dispatch("editPost", editedPost)
                 .then(() => this.$router.push("/admin"))
-                .catch(e => console.log(e))
         }
     }
 }

@@ -16,15 +16,8 @@ export default {
     },
     methods:{
         onSubmitted(postData){
-            axios.post("http://localhost:3000/posts", {   
-                    ...postData, 
-                    updatedDate:new Date(),
-                    id:Math.random().toString().slice(2,12)
-                })
-                .then((res) => {
-                    this.$router.push("/admin")
-                    })
-                .catch(e => console.log(e))
+            this.$store.dispatch("addPost", postData)
+                .then(() => this.$router.push("/admin"))
         }
     }
 }
