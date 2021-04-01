@@ -7,12 +7,8 @@
 </template>
 
 <script>
-import PostList from "@/components/Posts/PostList"
 import { mapState } from "vuex"
 export default {
-  components:{
-    PostList
-  },
   computed:{
     ...mapState(["loadedPosts"])
   }

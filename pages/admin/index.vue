@@ -16,15 +16,9 @@
 </template>
 
 <script>
-import PostList from "@/components/Posts/PostList"
-import AppButton from "@/components/UI/AppButton"
 import axios from "axios";
 export default {
     layout:"admin",
-    components:{
-        PostList,
-        AppButton
-    },
     asyncData(context){
         return axios.get(process.env.baseUrl + "/posts")
                 .then(res => {
