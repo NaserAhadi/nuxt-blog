@@ -16,14 +16,13 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
     layout:"admin",
     asyncData(context){
-        return axios.get(process.env.baseUrl + "/posts")
-                .then(res => {
+        return context.$axios.$get("/posts")
+                .then(data => {
                     return {
-                        loadedPost:res.data
+                        loadedPost:data
                     }
                 })
                 .catch(e => context.error(e))

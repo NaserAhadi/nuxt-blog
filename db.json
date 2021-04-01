@@ -5,7 +5,7 @@
       "title": "First Post",
       "content": "this is first post content",
       "thumbnail": "tech1.png",
-      "previewText": "preview of first post \ndoes it update work??\n???///",
+      "previewText": "preview of first post \ndoes it update work?",
       "updatedDate": "2021-03-31T12:41:17.518Z",
       "id": "3978482760"
     },
@@ -14,7 +14,7 @@
       "title": "Second Post",
       "content": "content of second post",
       "thumbnail": "tech2.png",
-      "previewText": "preview of second post !!!!!!!",
+      "previewText": "preview of second post !",
       "updatedDate": "2021-03-31T12:42:26.055Z",
       "id": "8577810071"
     },
@@ -35,6 +35,24 @@
       "previewText": "should work now!!\n???",
       "updatedDate": "2021-03-31T14:27:36.051Z",
       "id": "7553613221"
+    },
+    {
+      "author": "Naser",
+      "title": "test of axios modules",
+      "content": "test of axios modules",
+      "thumbnail": "tech2.png",
+      "previewText": "test of axios modules",
+      "updatedDate": "2021-04-01T10:28:44.944Z",
+      "id": "0966819813"
+    },
+    {
+      "author": "naser",
+      "title": "another test for axios module",
+      "content": "another test for axios module",
+      "thumbnail": "tech1.png",
+      "previewText": "another test for axios module",
+      "updatedDate": "2021-04-01T10:33:19.421Z",
+      "id": "6622158261"
     }
   ]
 }

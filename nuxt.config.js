@@ -16,7 +16,7 @@ export default {
       { rel: 'stylesheet', href:"https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" }
     ]
   },
-  loading: { color: "#fa923f", height:"4px", duration:5000},
+  loading: { color: "green", height:"2px", duration:5000},
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     "~/assets/styles/main.css"
@@ -42,7 +42,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL:"http://localhost:3000"
+    },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

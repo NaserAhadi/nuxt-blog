@@ -1,5 +1,4 @@
 import Vuex from "vuex";
-import axios from "axios";
 
 const createStore = () => {
     return new Vuex.Store({
@@ -18,9 +17,9 @@ const createStore = () => {
         },
         actions:{
             nuxtServerInit(vuexContext, context){
-                return axios.get(process.env.baseUrl + "/posts")
-                            .then(res => {
-                                vuexContext.commit("SET_POSTS", res.data)
+                return context.$axios.$get("/posts")
+                            .then(data => {
+                                vuexContext.commit("SET_POSTS", data)
                             })
                             .catch(e => context.error(e))
             },
@@ -33,16 +32,16 @@ const createStore = () => {
                     updatedDate:new Date(),
                     id:Math.random().toString().slice(2,12)
                 }
-                return axios.post(process.env.baseUrl + "/posts", createdPost)
-                    .then(res => {
-                        vuexContext.commit("ADD_POST", res.data)
+                return this.$axios.$post("/posts", createdPost)
+                    .then(data => {
+                        vuexContext.commit("ADD_POST", data)
                     })
                     .catch(e => console.log(e))
             },
             editPost(vuexContext, editedPost){
-                return axios.put(process.env.baseUrl + "/posts" + editedPost.id, editedPost)
-                    .then(res => {
-                        vuexContext.commit("EDIT_POST", res.data)
+                return this.$axios.$put("/posts/" + editedPost.id, editedPost)
+                    .then(data => {
+                        vuexContext.commit("EDIT_POST", data)
                     })
                     .catch(e => console.log(e))
             }
